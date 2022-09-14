@@ -1,26 +1,49 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import { Route, BrowserRouter, Routes } from 'react-router-dom';
+import { CssBaseline, createTheme, ThemeProvider } from '@mui/material';
 
-function App() {
+import SplashScreen from './screens/SplashScreen';
+import Home from './screens/Home';
+
+import { color } from './constants';
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: color.primary,
+    },
+    background: {
+      default: color.background,
+    },
+  },
+});
+
+const App = () => {
+  const [user, setUser] = useState({});
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <ThemeProvider theme={theme}>
+        {/* <AppContext.Provider value={{
+            flights,
+            setFlights,
+            hotels,
+            setHotels,
+            favorites,
+            setFavorites,
+            currentDestination,
+          }}
+          > */}
+        <CssBaseline />
+        <Routes>
+          <Route path="/profile" element={<SplashScreen />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/" element={<SplashScreen />} />
+        </Routes>
+        {/* </AppContext.Provider> */}
+      </ThemeProvider>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;
