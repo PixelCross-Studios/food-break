@@ -6,16 +6,19 @@ module.exports = {
   extends: [
     'airbnb',
     'airbnb-typescript',
-    'eslint:recommended',
     'plugin:react/recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:prettier/recommended',
   ],
-  overrides: [],
   parser: '@typescript-eslint/parser',
   parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
+      arrowFunctions: true,
+    },
     ecmaVersion: 'latest',
     sourceType: 'module',
+    project: ['./tsconfig.json'],
   },
   plugins: ['react', '@typescript-eslint', 'prettier'],
   rules: {
@@ -23,18 +26,10 @@ module.exports = {
       2,
       { namedComponents: 'arrow-function' },
     ],
+    'react/react-in-jsx-scope': ['off'],
     indent: ['error', 2],
     'linebreak-style': ['error', 'unix'],
     quotes: ['error', 'single'],
     semi: ['error', 'always'],
   },
-  overrides: [
-    {
-      files: ['*.ts', '*.tsx'],
-      extends: ['plugin:@typescript-eslint/recommended'],
-      parserOptions: {
-        project: ['./tsconfig.json'],
-      },
-    },
-  ],
 };
