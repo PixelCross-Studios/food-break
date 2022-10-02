@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import * as colors from '../styles/colors';
 
 const Dashboard = () => {
   return (
@@ -10,7 +11,7 @@ const Dashboard = () => {
 };
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#19323C',
+    backgroundColor: colors.BLUE,
     justifyContent: 'space-between',
     paddingTop: 20,
     alignItems: 'center',
@@ -18,7 +19,7 @@ const styles = StyleSheet.create({
     height: '100%',
   },
   titleText: {
-    color: 'skyblue',
+    color: colors.WHITE,
     fontSize: 30,
   },
 });

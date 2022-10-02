@@ -11,12 +11,15 @@ import * as colors from './src/styles/colors';
 const App = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  React.useEffect(() => {
+    console.log('isLoggedIn', isLoggedIn);
+  }, [isLoggedIn]);
   return (
     <SafeAreaView style={styles.container}>
       {isLoading ?
         <LoadingSpinner />
         : isLoggedIn ?
-          <MainNav />
+          <MainNav dummySignout={() => setIsLoggedIn(false)}/>
           :
           <Splash dummySignin={() => setIsLoggedIn(true)}/>
       }

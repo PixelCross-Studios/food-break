@@ -1,5 +1,6 @@
 import React from "react";
 import { Text, StyleSheet, TouchableOpacity } from "react-native";
+import * as colors from '../styles/colors';
 
 const Button = ({ 
     title, 
@@ -27,7 +28,7 @@ const styles = StyleSheet.create({
         borderRadius: 12,
       },
       buttonText: {
-        color: '#fff',
+        color: colors.WHITE,
         fontSize: 18,
       }
 });

@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import * as colors from '../styles/colors';
 
 const Splash = () => {
   return (
@@ -16,7 +17,7 @@ const styles = StyleSheet.create({
     height: '100%',
   },
   titleText: {
-    color: 'skyblue',
+    color: colors.WHITE,
     fontSize: 30,
   },
 });

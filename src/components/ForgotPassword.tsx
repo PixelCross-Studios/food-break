@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import { View, StyleSheet, TextInput } from 'react-native';
 import Button from './Button';
+import * as colors from '../styles/colors';
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState('');
@@ -15,22 +16,23 @@ const ForgotPassword = () => {
       />
       <Button
         title="Send password reset"
-        onPress={console.log('forgot password')}
-        color={'#af0b0f'}
+        onPress={() => console.log('forgot password')}
+        color={!email ? colors.GREY : colors.RED}
         customStyle={{ height: 40, marginTop: 20 }}
+        disabled={!email}
       />
     </View>
   )
 };
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#19323C',
+    backgroundColor: colors.BLUE,
     alignItems: 'center',
     width: '100%',
     height: '100%',
   },
   input: {
-    backgroundColor: '#fff',
+    backgroundColor: colors.WHITE,
     margin: 5,
     padding: 5,
     borderRadius: 8,
