@@ -10,7 +10,7 @@ const Dashboard = () => {
 };
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#25424F',
+    backgroundColor: '#19323C',
     justifyContent: 'space-between',
     paddingTop: 20,
     alignItems: 'center',

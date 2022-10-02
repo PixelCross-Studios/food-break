@@ -31,7 +31,7 @@ const SignUp = () => {
 };
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#25424F',
+    backgroundColor: '#19323C',
     alignItems: 'center',
     width: '100%',
     height: '100%',

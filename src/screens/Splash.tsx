@@ -1,14 +1,16 @@
 import React, {useState} from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import SignIn from '../components/SignIn';
 import SignUp from '../components/SignUp';
 import ForgotPassword from '../components/ForgotPassword';
+import * as colors from '../styles/colors';
 
 const Splash = ({ dummySignin }) => {
   const [currentView, setCurrentView] = useState('signin');
   return (
     <View style={styles.container}>
       <Text style={styles.titleText}>Food Break</Text>
+      <Image source={require('../assets/fbLogo.png')} style={styles.logo}/> 
       <View style={styles.inputContainer}>
         {currentView === 'signin' && <SignIn dummySignin={dummySignin}/>}
         {currentView === 'signup' && <SignUp />}
@@ -44,14 +46,20 @@ const styles = StyleSheet.create({
     height: '30%',
   },
   titleText: {
-    color: '#fff',
+    color: colors.WHITE,
     fontSize: 30,
     fontWeight: '700',
-    marginVertical: '10%',
+    marginTop: '10%',
+  },
+  logo: {
+    resizeMode: 'contain',
+    width: '10%',
+    height: '10%',
+    marginVertical: '5%',
   },
   linkText: {
-    color: '#ff988c',
-    marginTop: '5%'
+    color: colors.RED,
+    marginTop: '5%',
   },
 });
 

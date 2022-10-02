@@ -6,6 +6,7 @@ import {
 import MainNav from './src/navigation/MainNav';
 import Splash from './src/screens/Splash';
 import LoadingSpinner from './src/components/LoadingSpinner';
+import * as colors from './src/styles/colors';
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -25,7 +26,7 @@ const App = () => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#25424F',
+    backgroundColor: colors.BLUE,
     height: '100%',
     width: '100%',
   },
